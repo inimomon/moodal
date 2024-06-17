@@ -19,4 +19,7 @@ Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 
 Route::middleware('auth')->group(function() {
     Route::get('create', [HomeController::class, 'create'])->name('create');
+    Route::get('detail/{id}', [HomeController::class, 'detail'])->name('detail');
+    Route::post('insert', [HomeController::class, 'insert'])->name('insert');
+    Route::post('kasihModal', [HomeController::class, 'kasihModal'])->name('kasihModal');
 });

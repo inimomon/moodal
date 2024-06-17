@@ -16,11 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('judul_usaha');
             $table->text('deskripsi_usaha');
-            $table->string('target_biaya');
-            $table->string('biaya');
-            $table->string('jaminan');
+            $table->bigInteger('target_biaya');
+            $table->bigInteger('biaya');
+            $table->integer('jaminan');
             $table->date('tenggat');
             $table->json('pemodal')->nullable();
+            $table->json('jumlah_modal')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
